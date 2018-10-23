@@ -22,10 +22,11 @@ class Song
     new_song = Song.new(song_name)
 
     artist_filename = file_name.split(" - ")[0]
-    new_song.artist = Artist.find_or_create_by_name(artist_filename)
+
     @artist = Artist.find_or_create_by_name(artist_filename)
+    new_song.artist = Artist.find_or_create_by_name(artist_filename)
     new_song.artist_name = artist_filename
-    @artist_name = artist_filename
+    @artis_name = artist_filename
 
     @artist.save
     @artist.add_song(new_song)
