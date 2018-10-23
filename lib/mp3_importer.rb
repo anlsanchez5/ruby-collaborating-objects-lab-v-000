@@ -9,7 +9,7 @@ class MP3Importer
   end
 
   def files
-   files = Dir["@path/*"].map { |file_name| file_name.gsub('./spec/fixtures/mp3s/', '') }
+   files = Dir["@path*"].map { |file_name| file_name.gsub('./spec/fixtures/mp3s/', '') }
   end
 
   def import
